@@ -54,4 +54,43 @@
 
     //add image sizes here
 
-    add_image_size( 'homepage-slider' , 1170, 650, true);
+    //add_image_size( 'homepage-slider' , 1170, 650, true);
+
+
+//add google api key on the cms and pass it to acf maps field
+// function my_acf_init()
+// {
+//     $thekey = get_field('google_api_key', 'option');
+
+//     acf_update_setting('google_api_key', $thekey);
+// }
+
+// add_action('acf/init', 'my_acf_init');
+
+//creating new menus on the admin bar
+add_action('admin_bar_menu', 'add_toolbar_items', 100);
+
+function add_toolbar_items($admin_bar)
+{
+
+    $admin_bar->add_menu(array(
+        'id' => 'dev',
+        'title' => 'dev',
+        'href' => '#'
+    ));
+
+    $admin_bar->add_menu(array(
+        'id' => 'myadmin',
+        'title' => 'phpMyAdmin',
+        'href' => '/phpMyAdmin',
+        'parent' => 'dev'
+    ));
+//     $admin_bar->add_menu(array(
+//         'id' => 'myadmin',
+//         'title' => 'phpMyAdmin',
+//         'href' => '/phpMyAdmin',
+//         'parent' => 'dev'
+//     ));
+
+
+
