@@ -20,23 +20,28 @@
 
 
 
-    //custom post type helper **NEW**
+    //custom post type helper
     include_once(CPTDIR.'/lib/CTP.php');
 
-    //custom better search **NEW**
+    //custom better search
     include_once(CPTDIR.'/lib/acf-better-search.php');
 
     //acf saves acf-json to the plugin instead of the theme
     include_once(CPTDIR.'/lib/acf-plugin-config.php');
 
 
-	//template parts extra lets you pass an array of variables to the partial
-	include_once(CPTDIR . '/lib/template-part-extra.php');
+    //ACF BUILDER:::  lets you define acf stuff programatically
+    include_once(CPTDIR.'/lib/acf-builder/autoload.php');
+
+
+    //template parts extra lets you pass an array of variables to the partial
+    include_once(CPTDIR . '/lib/template-part-extra.php');
 
 
     // Define directories for post types and taxonomies
     $directories = array(
-        'post-type'   => CPTDIR . '/dataobjects/'
+        'post-type'   => CPTDIR . '/dataobjects/',
+        'acf-hm'   => CPTDIR . '/acf-handcoded-stuff/'
     );
 
     foreach ( $directories as $key => $directory ) {
@@ -94,6 +99,8 @@ function add_toolbar_items($admin_bar)
 //         'href' => '/phpMyAdmin',
 //         'parent' => 'dev'
 //     ));
+
+}
 
 
 
