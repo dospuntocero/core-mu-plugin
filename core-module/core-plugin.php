@@ -30,6 +30,9 @@
     include_once(CPTDIR.'/lib/acf-plugin-config.php');
 
 
+	//template parts extra lets you pass an array of variables to the partial
+	include_once(CPTDIR . '/lib/template-part-extra.php');
+
 
     // Define directories for post types and taxonomies
     $directories = array(
